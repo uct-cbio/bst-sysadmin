@@ -15,7 +15,6 @@ fi
 
 echo "Dumping database..."
 cmd="mysqldump --single-transaction -uredmine -p\"$redmine_db_pwd\" redmine > $db_dump_file"
-echo $cmd
 eval $cmd
 echo "Removing copy.."
 rm -f $db_dump_file_copy
