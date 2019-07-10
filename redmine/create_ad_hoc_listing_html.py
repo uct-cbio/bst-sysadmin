@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.6
 
+# Create an HTML page listing all the ad hoc queries in Redmine
+
 import sys
 import jinja2
 from jinja2 import Template
