@@ -23,6 +23,7 @@ E.g.
 ## Create HTML pages
 
 1. Listing the projects and their project_info
+
 `./create_project_listing_html.py -i ~/scratch/project_info.tsv -t create_project_listing_template.tmpl -o ~/scratch/project_info.html`
 
 
