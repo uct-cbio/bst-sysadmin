@@ -22,7 +22,7 @@ def main():
         print ("Please specify the add hoc listing TSV input file. (-i input)")
         return - 1
     if not options.template:
-        print ("Please specify the add hoc listing HTML template file (-o output)")
+        print ("Please specify the add hoc listing HTML template file (-t output)")
         return - 2
     if not options.alh_file:
         print ("Please specify the add hoc listing HTML output file (-o output)")

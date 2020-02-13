@@ -29,4 +29,5 @@ E.g.
 
 2. Listing the add-hoc queries and their info
 
+`sed -i '/^$/d' ~/scratch/ad_hoc_project_issue_info.tsv`
 `./create_ad_hoc_listing_html.py -i ~/scratch/ad_hoc_project_issue_info.tsv -t create_ad_hoc_listing_template.tmpl -o ~/scratch/ad_hoc_project_issue_info.html`

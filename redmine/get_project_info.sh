@@ -5,7 +5,7 @@
 # Print header
 echo -e "Project title\tMembers\tShort description of project\tOjectives\tHours spent"
 # Get info for all projects
-for i in `curl -X GET -H 'Content-type: text/xml' "http://bst.cbio.uct.ac.za/redmine/projects.xml?format=xml&key=$key" 2> /dev/null | xmllint --xpath '//identifier' - | sed "s/<identifier>//g" | sed "s/<\/identifier>/\n/g"`; do
+for i in `curl -X GET -H 'Content-type: text/xml' "http://bst.cbio.uct.ac.za/redmine/projects.xml?format=xml&key=$key&limit=100" 2> /dev/null | xmllint --xpath '//identifier' - | sed "s/<identifier>//g" | sed "s/<\/identifier>/\n/g"`; do
   # Get project title
   curl -X GET -H 'Content-type: text/xml' "http://bst.cbio.uct.ac.za/redmine/projects/$i.xml?format=xml&key=$key" 2> /dev/null | xmllint --xpath '//description' - | sed "s/<description>//g" | sed "s/<\/description>/\n/g" | tr "\n" " " | sed -e "s/.*\*Project title\*\(.*\)\*People involved\*.*/\1/" | sed "s/ //"
   echo -en '\t'
