@@ -31,3 +31,18 @@ E.g.
 
 `sed -i '/^$/d' ~/scratch/ad_hoc_project_issue_info.tsv`
 `./create_ad_hoc_listing_html.py -i ~/scratch/ad_hoc_project_issue_info.tsv -t create_ad_hoc_listing_template.tmpl -o ~/scratch/ad_hoc_project_issue_info.html`
+
+## Other
+
+1. Sorting on time updated (same can be done on time created, column 5)
+`cat ~/scratch/project_info.tsv | sort -k 6 -r -t$'\t' | tail -n +2 > ~/scratch/content.tsv`
+`head -n 1 ~/scratch/project_info.tsv  > ~/scratch/head.tsv`
+`cat ~/scratch/head.tsv ~/scratch/content.tsv > ~/scratch/project_info.tsv`
+`./create_project_listing_html.py -i ~/scratch/project_info.tsv -t create_project_listing_template.tmpl -o ~/scratch/project_info.html`
+
+2. Sorting on hours spent
+`cat ~/scratch/project_info.tsv | tail -n +2 > ~/content.tsv`
+`cat ~/scratch/content.tsv | sort -k 7 -rn -t$'\t' > ~/scratch/content.sorted.tsv`
+`cat ~/scratch/project_info.tsv | head -n 1 > ~/scratch/header.tsv`
+`cat ~/scratch/header.tsv ~/scratch/content.sorted.tsv > ~/scratch/project_info.tsv`
+`./create_project_listing_html.py -i ~/scratch/project_info.tsv -t create_project_listing_template.tmpl -o ~/scratch/project_info.html`
