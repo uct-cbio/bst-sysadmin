@@ -9,6 +9,7 @@ import re
 import string
 from optparse import OptionParser
 import csv
+import datetime
 
 def main():
     usage = "usage: %prog -i project_listing_file -t project_listing_template_file -o project_listing_html_file"
@@ -42,8 +43,18 @@ def main():
     pl_file_tsv = csv.reader(open(pl_file), delimiter='\t')
 
     rows = []
+    new_format = "%Y/%m/%d"
+    header = True
+
     for row in pl_file_tsv:
         rows.append(row)
+        if(not header):
+            d1 = datetime.datetime.strptime(row[4],"%Y-%m-%dT%H:%M:%SZ")
+            row[4] = d1.strftime(new_format)
+            d1 = datetime.datetime.strptime(row[5],"%Y-%m-%dT%H:%M:%SZ")
+            row[5] = d1.strftime(new_format)
+
+        header = False
 
     html = (tm.render(rows=rows))
 
