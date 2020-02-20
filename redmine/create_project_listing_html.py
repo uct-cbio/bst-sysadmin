@@ -58,7 +58,7 @@ def main():
 
     html = (tm.render(rows=rows))
 
-    fd_out = open(plh_file,"w")
+    fd_out = open(plh_file,"w", encoding='utf-16')
     fd_out.write(html)
     fd_out.close()
 
