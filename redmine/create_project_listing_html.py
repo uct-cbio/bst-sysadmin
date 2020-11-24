@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python3.7
 
 # Create an HTML page listing all the projects in Redmine
 
@@ -44,7 +44,7 @@ def main():
 
     rows = []
     new_format = "%Y/%m/%d"
-    header = True
+    header = False 
 
     for row in pl_file_tsv:
         rows.append(row)
