@@ -46,3 +46,5 @@ E.g.
 `cat ~/scratch/project_info.tsv | head -n 1 > ~/scratch/header.tsv`
 `cat ~/scratch/header.tsv ~/scratch/content.sorted.tsv > ~/scratch/project_info.tsv`
 `./create_project_listing_html.py -i ~/scratch/project_info.tsv -t create_project_listing_template.tmpl -o ~/scratch/project_info.html`
+
+3. `dump_index.sh` a script that is called by a cronjob to generate an project listing file as in (1) and dump it in the Apache root folder.
