@@ -44,7 +44,7 @@ def main():
 
     rows = []
     new_format = "%Y/%m/%d"
-    header = False 
+    header = True 
 
     for row in pl_file_tsv:
         rows.append(row)
