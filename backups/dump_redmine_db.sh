@@ -14,7 +14,7 @@ fi
 . $config
 
 echo "Dumping database..."
-cmd="mysqldump --single-transaction -uredmine -p\"$redmine_db_pwd\" redmine > $db_dump_file"
+cmd="mysqldump --no-tablespaces --single-transaction -uredmine -p\"$redmine_db_pwd\" redmine > $db_dump_file"
 eval $cmd
 echo "Removing copy.."
 rm -f $db_dump_file_copy
