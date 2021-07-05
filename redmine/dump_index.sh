@@ -6,4 +6,4 @@ cat /home/gerrit/scratch/project_info.tsv | sort -k 6 -r -t$'\t' | tail -n +2 > 
 head -n 1 /home/gerrit/scratch/project_info.tsv  > /home/gerrit/scratch/head.tsv
 cat /home/gerrit/scratch/head.tsv /home/gerrit/scratch/content.tsv > /home/gerrit/scratch/project_info.tsv
 /home/gerrit/code/bst-sysadmin/redmine/create_project_listing_html.py -i /home/gerrit/scratch/project_info.tsv -t /home/gerrit/code/bst-sysadmin/redmine/create_project_listing_template.tmpl -o /home/gerrit/scratch/project_info.html
-sudo cp /home/gerrit/scratch/project_info.html /var/www/index.html
+sudo cp /home/gerrit/scratch/project_info.html /var/www/html/index.html
